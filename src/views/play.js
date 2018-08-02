@@ -5,7 +5,6 @@ import Cards from '../cards'
 import Card from '../components/card'
 import Spinner from '../components/double-bounce-spinner'
 import Lightbox from '../components/lightbox'
-import GameOver from '../components/game-over'
 import Victory from '../components/victory'
 
 const NOOP = function () {}
@@ -20,7 +19,6 @@ export default React.createClass({
   getInitialState () {
     return {
       cardsList: this.generateGame(),
-      gameOver: false,
       victory: false,
       match: {}
     }
@@ -37,7 +35,6 @@ export default React.createClass({
   render () {
     return (
       <div className='play-view'>
-        {this.state.gameOver && <Lightbox><GameOver /></Lightbox>}
         {this.state.victory && <Lightbox><Victory /></Lightbox>}
         <div className='control'>
           <Spinner />
@@ -135,7 +132,9 @@ export default React.createClass({
 
   generateGame () {
     const cardsList = shuffle([].concat(Cards)).slice(0, NUM_OF_PAIRS)
-    return shuffle(cardsList.concat(cardsList))
+    const cardsListFirstPair = cardsList.map((x) => Object.assign({firstPath: true}, x))
+    const cardsListTwoPair = cardsList.map((x) => Object.assign({firstPath: false}, x))
+    return shuffle(cardsListFirstPair.concat(cardsListTwoPair))
   },
 
   enableCardClick () {

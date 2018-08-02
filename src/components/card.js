@@ -7,7 +7,8 @@ export default React.createClass({
     background: React.PropTypes.string,
     label: React.PropTypes.string,
     revealed: React.PropTypes.bool,
-    onClick: React.PropTypes.func
+    onClick: React.PropTypes.func,
+    firstPath: React.PropTypes.bool
   },
 
   getDefaultProps () {
@@ -16,13 +17,14 @@ export default React.createClass({
 
   render () {
     const className = this.props.revealed ? '' : 'rotate'
+    const path = this.props.firstPath ? this.props.path : this.props.path2
 
     return (
       <div className={`card ${className}`} onClick={this.clickHandler}>
         <a href='#'>
           <div className='card-icon'
             style={{backgroundColor: this.props.backgroundColor}}
-            dangerouslySetInnerHTML={{__html: `<img src='${this.props.path}' alt='${this.props.path}' width='100%' height='auto'></img>`}}>
+            dangerouslySetInnerHTML={{__html: `<img src='${path}' alt='${path}' width='100%' height='auto'></img>`}}>
           </div>
         </a>
       </div>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router'
-import GithubSVG from './github-svg'
 
 export default React.createClass({
   render () {
@@ -13,7 +12,7 @@ export default React.createClass({
             <li className='item'><Link to='/scores'>Scores</Link></li>
             <li className='item'><Link to='/about'>About</Link></li>
             <li className='item'></li>
-            <li className='item'><a href='https://github.com/tulios/react-memory-game' target='_blank'><GithubSVG /></a></li>
+            <li className='item'></li>
           </ul>
           <div className='guard right' />
         </div>
