@@ -1,18 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
-import VictorySVG from './victory-svg'
 
 export default React.createClass({
   render () {
     return (
-      <div className='victory'>
-        <div className='message'>
-          <VictorySVG />
-          <span>Congrats!</span>
-        </div>
-        <p>
-          <Link to='/'>Play again</Link>
-        </p>
+      <div className='message'>
+        <h3>You win! Click on the images to see some more details. <Link to='/'>Click here to reload with a new set of images.</Link></h3>
       </div>
     )
   }

@@ -4,7 +4,6 @@ import shuffle from 'lodash/shuffle'
 import Cards from '../cards'
 import Card from '../components/card'
 import Spinner from '../components/double-bounce-spinner'
-import Lightbox from '../components/lightbox'
 import Victory from '../components/victory'
 
 const NOOP = function () {}
@@ -35,10 +34,11 @@ export default React.createClass({
   render () {
     return (
       <div className='play-view'>
-        {this.state.victory && <Lightbox><Victory /></Lightbox>}
         <div className='control'>
           <Spinner />
+          <h3>Match the images</h3>
         </div>
+        {this.state.victory && <Victory />}
         <div className='cards'>
           {this.renderCardsList()}
         </div>
