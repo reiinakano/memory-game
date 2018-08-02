@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactModal from 'react-modal'
 import shuffle from 'lodash/shuffle'
 
 import Cards from '../cards'
@@ -14,12 +15,15 @@ function merge (...args) {
   return [{}, ...args].reduce(Object.assign)
 }
 
+ReactModal.setAppElement(document.getElementById('root'))
+
 export default React.createClass({
   getInitialState () {
     return {
       cardsList: this.generateGame(),
       victory: false,
-      match: {}
+      match: {},
+      modalVisible: false
     }
   },
 
@@ -42,6 +46,13 @@ export default React.createClass({
         <div className='cards'>
           {this.renderCardsList()}
         </div>
+        <ReactModal
+          isOpen={this.state.modalVisible}
+          contentLabel='Minimal Modal Example'
+        >
+          <button onClick={this.hideModal}>Close Modal</button>
+        </ReactModal>
+        <button onClick={this.showModal}>show</button>
       </div>
     )
   },
@@ -143,5 +154,13 @@ export default React.createClass({
 
   disableCardClick () {
     this.isCardClickDisabled = true
+  },
+
+  hideModal () {
+    this.setState({ modalVisible: false })
+  },
+
+  showModal () {
+    this.setState({ modalVisible: true })
   }
 })
