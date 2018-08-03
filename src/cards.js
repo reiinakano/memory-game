@@ -1,34 +1,34 @@
 export default [
   {
     label: 'onsen',
-    path: 'https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/37781364_10217671257792746_7300649683926384640_o.jpg?_nc_cat=0&oh=ba0df4f2548f984b14cae27e5299a775&oe=5BCE156C',
-    path2: 'http://www.shichinohe-kankou.jp/english/wp-content/uploads/2015/08/onsen_manner06.gif',
-    fullPath: 'https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/37781364_10217671257792746_7300649683926384640_o.jpg?_nc_cat=0&oh=ba0df4f2548f984b14cae27e5299a775&oe=5BCE156C',
+    path: 'img/onsen1.jpg',
+    path2: 'img/onsen2.gif',
+    fullPath: 'img/onsen1.jpg',
     backgroundColor: '#A79BE5',
-    caption: 'Onsen'
+    caption: 'Oedo-Onsen Monogatari - 大江戸温泉物語'
   },
   {
-    label: 'Cat',
-    path: 'Cat',
-    path2: 'Cat',
-    fullPath: 'Cat',
+    label: 'kimi_no_na_wa',
+    path: 'img/kimi1.jpg',
+    path2: 'img/kimi2.jpg',
+    fullPath: 'img/kimi1.jpg',
     backgroundColor: '#FFD6C0',
-    caption: 'Cat'
+    caption: 'Suga Shrine (須賀神社)'
   },
   {
-    label: 'Rat',
-    path: 'Rat',
-    path2: 'Rat',
-    fullPath: 'Rat',
+    label: 'curry',
+    path: 'img/curry1.jpg',
+    path2: 'img/curry2.jpg',
+    fullPath: 'img/curry.jpg',
     backgroundColor: '#79D9EA',
-    caption: 'Rat'
+    caption: 'Monster Curry'
   },
   {
-    label: 'Rabbit',
-    path: 'Rabbit',
-    path2: 'Rabbit',
-    fullPath: 'Rabbit',
+    label: 'two',
+    path: 'img/two1.jpg',
+    path2: 'img/two2.jpg',
+    fullPath: 'img/two1.jpg',
     backgroundColor: '#3F4AB7',
-    caption: 'Rabbit'
+    caption: '2nd Anniversary Dinner at MOS Burger!'
   }
 ]

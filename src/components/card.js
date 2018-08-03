@@ -24,7 +24,7 @@ export default React.createClass({
         <a href='#'>
           <div className='card-icon'
             style={{backgroundColor: this.props.backgroundColor}}
-            dangerouslySetInnerHTML={{__html: `<img src='${path}' alt='${path}' width='100%' height='auto'></img>`}}>
+            dangerouslySetInnerHTML={{__html: `<img src='${path}' alt='${path}' width='100%' margin='auto'></img>`}}>
           </div>
         </a>
       </div>
