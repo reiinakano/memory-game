@@ -1,3 +1,4 @@
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /**
  * Sagui configuration object
@@ -30,7 +31,12 @@ module.exports = {
           loader: 'webpack-inject-css-loader?appPath=./src&debug=false'
         }
       ]
-    }
+    },
+    plugins: [
+      new CopyWebpackPlugin([
+        {from:'img', to:'img'} 
+      ]), 
+    ]
   },
 
   /**

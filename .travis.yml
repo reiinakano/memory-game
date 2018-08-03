@@ -5,13 +5,10 @@ install:
   - "npm install"
 script:
   - "npm run dist"
-  - "mkdir build"
-  - "cp -r dist/* build"
-  - "cp -r src/img build/img"
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   on:
     branch: master
-  local_dir: "build"
+  local_dir: "dist"
