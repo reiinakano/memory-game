@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactModal from 'react-modal'
+import Lightbox from 'react-images'
 import shuffle from 'lodash/shuffle'
 
 import Cards from '../cards'
@@ -15,11 +15,10 @@ function merge (...args) {
   return [{}, ...args].reduce(Object.assign)
 }
 
-ReactModal.setAppElement(document.getElementById('root'))
-
 export default React.createClass({
   getInitialState () {
     return {
+      currentImage: 0,
       cardsList: this.generateGame(),
       victory: false,
       match: {},
@@ -46,12 +45,20 @@ export default React.createClass({
         <div className='cards'>
           {this.renderCardsList()}
         </div>
-        <ReactModal
+        <Lightbox
+          currentImage={this.state.currentImage}
+          images={this.getUniquePhotos()}
           isOpen={this.state.modalVisible}
-          contentLabel='Minimal Modal Example'
-        >
-          <button onClick={this.hideModal}>Close Modal</button>
-        </ReactModal>
+          onClose={this.hideModal}
+          onClickImage={() => {
+            if (this.state.currentImage === NUM_OF_PAIRS - 1) return
+            this.setState({ currentImage: this.state.currentImage + 1 })
+          }}
+          onClickNext={() => this.setState({ currentImage: this.state.currentImage + 1 })}
+          onClickPrev={() => this.setState({ currentImage: this.state.currentImage - 1 })}
+          onClickThumbnail={(idx) => this.setState({ currentImage: idx })}
+          showThumbnails
+        />
         <button onClick={this.showModal}>show</button>
       </div>
     )
@@ -71,6 +78,15 @@ export default React.createClass({
           {...data} />
       )
     })
+  },
+
+  getUniquePhotos () {
+    const duplicates = []
+    return this.state.cardsList.filter((x) => {
+      let duplicate = duplicates.includes(x.label)
+      duplicates.push(x.label)
+      return !duplicate
+    }).map((x) => { return {src: x.fullPath, caption: x.caption} })
   },
 
   timeExpired () {
