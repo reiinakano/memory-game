@@ -40,7 +40,7 @@ export default React.createClass({
           <Spinner />
           <h3>Match the images</h3>
         </div>
-        {this.state.victory && <Victory />}
+        {this.state.victory && <Victory onClick={() => this.resetGame()}/>}
         <div className='cards'>
           {this.renderCardsList()}
         </div>
@@ -162,6 +162,14 @@ export default React.createClass({
       const completelyRevelead = (match[item.label] >= 2)
       return otherCard && !completelyRevelead ? merge(item, { revealed: false }) : item
     }))
+  },
+
+  resetGame () {
+    this.setState({victory: false, cardsList: this.state.cardsList.map((x) => Object.assign(x, { revealed: false }))})
+    setTimeout(() => {
+      this.setState(this.getInitialState())
+      this.enableCardClick()
+    }, 1000)
   },
 
   generateGame () {
