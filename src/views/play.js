@@ -40,10 +40,10 @@ export default React.createClass({
           <Spinner />
           <h3>Match the images</h3>
         </div>
-        {this.state.victory && <Victory onClick={() => this.resetGame()}/>}
         <div className='cards'>
           {this.renderCardsList()}
         </div>
+        {this.state.victory && <Victory onClick={() => this.resetGame()}/>}
         <Lightbox
           currentImage={this.state.currentImage}
           images={this.getUniquePhotos()}
