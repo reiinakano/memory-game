@@ -30,5 +30,37 @@ export default [
     fullPath: 'img/two1.jpg',
     backgroundColor: '#3F4AB7',
     caption: '2nd Anniversary Dinner at MOS Burger!'
+  },
+  {
+    label: 'lantern',
+    path: 'img/lantern1.jpg',
+    path2: 'img/lantern2.jpg',
+    fullPath: 'img/lantern1.jpg',
+    backgroundColor: '#FAD97B',
+    caption: 'Shifen Old Street, Taiwan'
+  },
+  {
+    label: 'chopper',
+    path: 'img/chopper1.jpg',
+    path2: 'img/chopper2.jpg',
+    fullPath: 'img/chopper1.jpg',
+    backgroundColor: '#33414C',
+    caption: 'With Chopper!'
+  },
+  {
+    label: 'bed',
+    path: 'img/bed1.jpg',
+    path2: 'img/bed2.jpg',
+    fullPath: 'img/bed.jpg',
+    backgroundColor: '#FF7387',
+    caption: 'Random picture in Batangas!'
+  },
+  {
+    label: 'first',
+    path: 'img/first1.jpg',
+    path2: 'img/first2.jpg',
+    fullPath: 'img/first1.jpg',
+    backgroundColor: '#54CA95',
+    caption: 'Day zero at Patio Vera!'
   }
 ]
