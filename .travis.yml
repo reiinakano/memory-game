@@ -7,7 +7,7 @@ script:
   - "npm run dist"
   - "mkdir build"
   - "cp -r dist/* build"
-  - "cp -r img build/img"
+  - "cp -r src/img build/img"
 deploy:
   provider: pages
   skip_cleanup: true
