@@ -8,7 +8,7 @@ import Spinner from '../components/double-bounce-spinner'
 import Victory from '../components/victory'
 
 const REVEAL_PERIOD = 850 // ms
-const NUM_OF_PAIRS = 5 // max: Cards.length (12)
+const NUM_OF_PAIRS = 9 // max: Cards.length (12)
 
 function merge (...args) {
   return [{}, ...args].reduce(Object.assign)

@@ -62,5 +62,37 @@ export default [
     fullPath: 'img/first1.jpg',
     backgroundColor: '#54CA95',
     caption: 'Day zero at Patio Vera!'
+  },
+  {
+    label: 'magic',
+    path: 'img/magic1.jpg',
+    path2: 'img/magic2.jpg',
+    fullPath: 'img/magic1.jpg',
+    backgroundColor: '#302B49',
+    caption: 'I don\'t remember where this is in Taiwan but it looks like a magical place'
+  },
+  {
+    label: 'fun',
+    path: 'img/fun1.jpg',
+    path2: 'img/fun2.jpg',
+    fullPath: 'img/fun1.jpg',
+    backgroundColor: '#889CA8',
+    caption: 'Happy House'
+  },
+  {
+    label: 'friends',
+    path: 'img/friends1.jpg',
+    path2: 'img/friends2.jpg',
+    fullPath: 'img/friends1.jpg',
+    backgroundColor: '#C46FA5',
+    caption: 'Central Perk!'
+  },
+  {
+    label: 'croc',
+    path: 'img/croc1.jpg',
+    path2: 'img/croc2.jpg',
+    fullPath: 'img/croc.jpg',
+    backgroundColor: '#F49C6E',
+    caption: 'Mine is better!!'
   }
 ]
