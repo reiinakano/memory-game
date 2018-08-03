@@ -7,7 +7,6 @@ import Card from '../components/card'
 import Spinner from '../components/double-bounce-spinner'
 import Victory from '../components/victory'
 
-const NOOP = function () {}
 const REVEAL_PERIOD = 850 // ms
 const NUM_OF_PAIRS = 3 // max: Cards.length (12)
 
@@ -59,7 +58,6 @@ export default React.createClass({
           onClickThumbnail={(idx) => this.setState({ currentImage: idx })}
           showThumbnails
         />
-        <button onClick={this.showModal}>show</button>
       </div>
     )
   },
@@ -74,7 +72,7 @@ export default React.createClass({
         <Card
           key={i}
           index={i}
-          onClick={!data.revealed ? this.cardClicked : NOOP}
+          onClick={!data.revealed ? this.cardClicked : this.revealedCardClicked}
           {...data} />
       )
     })
@@ -86,11 +84,20 @@ export default React.createClass({
       let duplicate = duplicates.includes(x.label)
       duplicates.push(x.label)
       return !duplicate
-    }).map((x) => { return {src: x.fullPath, caption: x.caption} })
+    }).map((x) => { return {src: x.fullPath, caption: x.caption, label: x.label} })
+  },
+
+  labelToPhotoIndex (label) {
+    const uniquePhotos = this.getUniquePhotos()
+    return uniquePhotos.findIndex((x) => x.label === label)
   },
 
   timeExpired () {
     this.setState({ gameOver: true })
+  },
+
+  revealedCardClicked (currentCard) {
+    if (this.state.victory) this.setState({ modalVisible: true, currentImage: this.labelToPhotoIndex(currentCard.label) })
   },
 
   cardClicked (currentCard) {
